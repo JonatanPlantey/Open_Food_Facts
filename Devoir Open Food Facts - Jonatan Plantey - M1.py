@@ -132,17 +132,9 @@ codes_produit = []
 
 for url in liens:
     
-    if r.status_code == 200:
-    
-        r = requests.get(url)
-    
-        soup = bs4.BeautifulSoup(r.text, 'html.parser')
+    code_produit = url[36:50]
         
-        produit = soup.find('div', attrs={"class": "medium-8 small-12 columns"})
-        
-        code_produit = produit.find("span", id="barcode").text
-        
-        codes_produit.append(code_produit)
+    codes_produit.append(code_produit)
 
 print(codes_produit)
 
@@ -208,10 +200,10 @@ récupération des liens vers chaque page des produits :
  - dans le premier cas, il ne reste plus qu'à scraper les informations demandées
 dans la page
  - dans le deuxième cas, il faut tout de même scraper le code du produit dans
-cette même page avant de questionner l'API
+ces liens avant de questionner l'API
  
-On voit donc dans ce cas précis, que la deuxième méthode utilise un plus grand
-nombre de lignes de code.
+On voit donc dans ce cas précis, que la deuxième méthode utilise légèrement un
+plus grand nombre de lignes de code.
 
 Malgré tout, la deuxième méthode demande une recherche beaucoup plus simple et
 beaucoup plus rapide des mots clés (keywords) dans le fichier JSON que ne l'est
