@@ -149,7 +149,7 @@ print(codes_produit)
 
 #%%
 ####################################################################
-# Scraping des informations demandées pour ces  produits via l'API #
+# Scraping des informations demandées pour ces produits via l'API #
 ####################################################################
 
 # =============================================================================
