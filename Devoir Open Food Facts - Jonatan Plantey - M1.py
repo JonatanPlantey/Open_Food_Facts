@@ -60,12 +60,9 @@ soup_liste_produits = search_results.find_all('a')
 
 liens = []
 
-i = 1
-for soup_produit in soup_liste_produits:
-    if i <= 6:
-        lien_produit = "https://fr.openfoodfacts.org" + soup_produit.get("href")
-        liens.append(lien_produit)
-        i += 1
+for soup_produit in soup_liste_produits[0:6]:
+    lien_produit = "https://fr.openfoodfacts.org" + soup_produit.get("href")
+    liens.append(lien_produit)
 
 #print(liens)
 
